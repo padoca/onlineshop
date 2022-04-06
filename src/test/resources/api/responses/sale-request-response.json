@@ -1,0 +1,17 @@
+{
+  "product":{
+    "id":1,
+    "name":"PRODUCT_1",
+    "attributes":"EUR",
+    "creationDate":"2022-03-14-00.00.00",
+    "inStock":true
+  },
+  "user":{
+    "id":2,
+    "email":"janet.weaver@reqres.in",
+    "avatar":"https://reqres.in/img/faces/2-image.jpg",
+    "first_name":"Janet",
+    "last_name":"Weaver"
+  },
+  "amount":5
+}
