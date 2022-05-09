@@ -44,7 +44,7 @@ class PricesServiceSpringBootTests {
   public void given_Test1Request_when_GetEndpointCalled_then_ReturnsExpecteed() throws ParseException {
     Mockito.when(pricesResponseEntityMapper.toDto(Mockito.any())).thenCallRealMethod();
     Mockito.when(pricesRepository.findByFilter(Utils.toTimestamp("2020-06-14-10.00.00"), 35455, 1)).thenReturn(List.<Prices>of(prices1));
-    List<PricesDto> result = pricesService.getPricesFilter("2020-06-14-10.00.00", 35455, 1);
+    List<PricesDto> result = pricesService.getPricesFilter(Utils.toLocalDateTime("2020-06-14-10.00.00"), 35455, 1);
     Assertions.assertNotNull(result);
     Assertions.assertEquals(result.get(0).getPrice(), prices1.getPrice());
   }
@@ -53,7 +53,7 @@ class PricesServiceSpringBootTests {
   public void given_Test2Request_when_GetEndpointCalled_then_ReturnsExpecteed() throws ParseException {
     Mockito.when(pricesResponseEntityMapper.toDto(Mockito.any())).thenCallRealMethod();
     Mockito.when(pricesRepository.findByFilter(Utils.toTimestamp("2020-06-14-16.00.00"), 35455, 1)).thenReturn(List.of(prices1, prices2));
-    List<PricesDto> result = pricesService.getPricesFilter("2020-06-14-16.00.00", 35455, 1);
+    List<PricesDto> result = pricesService.getPricesFilter(Utils.toLocalDateTime("2020-06-14-16.00.00"), 35455, 1);
     Assertions.assertNotNull(result);
     Assertions.assertEquals(result.get(0).getPrice(), prices1.getPrice());
     Assertions.assertEquals(result.get(1).getPrice(), prices2.getPrice());
@@ -63,7 +63,7 @@ class PricesServiceSpringBootTests {
   public void given_Test3Request_when_GetEndpointCalled_then_ReturnsExpecteed() throws ParseException {
     Mockito.when(pricesResponseEntityMapper.toDto(Mockito.any())).thenCallRealMethod();
     Mockito.when(pricesRepository.findByFilter(Utils.toTimestamp("2020-06-14-21.00.00"), 35455, 1)).thenReturn(List.of(prices1));
-    List<PricesDto> result = pricesService.getPricesFilter("2020-06-14-21.00.00", 35455, 1);
+    List<PricesDto> result = pricesService.getPricesFilter(Utils.toLocalDateTime("2020-06-14-21.00.00"), 35455, 1);
     Assertions.assertNotNull(result);
     Assertions.assertEquals(result.get(0).getPrice(), prices1.getPrice());
   }
@@ -72,7 +72,7 @@ class PricesServiceSpringBootTests {
   public void given_Test4Request_when_GetEndpointCalled_then_ReturnsExpecteed() throws ParseException {
     Mockito.when(pricesResponseEntityMapper.toDto(Mockito.any())).thenCallRealMethod();
     Mockito.when(pricesRepository.findByFilter(Utils.toTimestamp("2020-06-15-10.00.00"), 35455, 1)).thenReturn(List.of(prices1, prices3));
-    List<PricesDto> result = pricesService.getPricesFilter("2020-06-15-10.00.00", 35455, 1);
+    List<PricesDto> result = pricesService.getPricesFilter(Utils.toLocalDateTime("2020-06-15-10.00.00"), 35455, 1);
     Assertions.assertNotNull(result);
     Assertions.assertEquals(result.get(0).getPrice(), prices1.getPrice());
     Assertions.assertEquals(result.get(1).getPrice(), prices3.getPrice());
@@ -82,7 +82,7 @@ class PricesServiceSpringBootTests {
   public void given_Test5Request_when_GetEndpointCalled_then_ReturnsExpecteed() throws ParseException {
     Mockito.when(pricesResponseEntityMapper.toDto(Mockito.any())).thenCallRealMethod();
     Mockito.when(pricesRepository.findByFilter(Utils.toTimestamp("2020-06-16-21.00.00"), 35455, 1)).thenReturn(List.of(prices1, prices4));
-    List<PricesDto> result = pricesService.getPricesFilter("2020-06-16-21.00.00", 35455, 1);
+    List<PricesDto> result = pricesService.getPricesFilter(Utils.toLocalDateTime("2020-06-16-21.00.00"), 35455, 1);
     Assertions.assertNotNull(result);
     Assertions.assertEquals(result.get(0).getPrice(), prices1.getPrice());
     Assertions.assertEquals(result.get(1).getPrice(), prices4.getPrice());
